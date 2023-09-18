@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model german_table{
+  id Int @id @default(autoincrement())
+  word String @unique
+  meaning String
+  view Int
+  nextWord String
+  prevWord String
+  germanTranslation String
+  partsOfSpeech String
+  lastMod String
+} // migrate to create table by typing : npx prisma migrate dev 
+// then install prisma studio to control database on the browser by typing : npx prisma studio
