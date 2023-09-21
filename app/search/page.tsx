@@ -18,6 +18,10 @@ export async function generateMetadata(): Promise<Metadata> {
             description: `Search the word you are looking for | WordMeaningOnline.com`,
             images: 'https://wordmeaningonline.com/opengraph-image.png'
           },
+          robots: {
+            index: false,
+            follow: false,
+          },
     }
 }
 // dynamic metadata ends here-------------------

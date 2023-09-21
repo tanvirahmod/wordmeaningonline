@@ -18,6 +18,10 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
             description: `Better Word Explanation of English Words in German language. Browse the word by first letter | WordMeaningOnline.com`,
             images: 'https://wordmeaningonline.com/opengraph-image.png'
           },
+          robots: {
+            index: false,
+            follow: true,
+          },
     }
 }
 // dynamic metadata ends here-------------------

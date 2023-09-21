@@ -1,5 +1,7 @@
-User-Agent: *
-Allow: /
-Disallow:
+User-agent: Googlebot
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /logout/
 
 Sitemap: https://wordmeaningonline.com/sitemap.xml
