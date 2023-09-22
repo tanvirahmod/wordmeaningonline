@@ -33,7 +33,7 @@ export async function generateMetadata(
 // dynamic metadata ends here-------------------
 
 export default async function word({ params }: any) {
-    const word1: any = await getWord(params.word)
+    const word1: any = await getWord(params.word.toLowerCase())
     if (!word1) {
         notFound()
     }

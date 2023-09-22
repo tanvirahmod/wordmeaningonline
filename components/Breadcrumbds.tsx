@@ -7,8 +7,8 @@ export default function Breadcrumbs(props: { place: string, title: string, name:
 
             <span itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
                 <Link className='no-underline' href="/" itemProp="item" title="Home">
-                    <span itemProp="name" className='flex items-center gap-2 text-violet-600'>
-                    &#9751;
+                    <span itemProp="name" className='text-slate-600 text-sm'>
+                        Home
                     </span>
                 </Link>
                 <meta content="1" itemProp="position" />
