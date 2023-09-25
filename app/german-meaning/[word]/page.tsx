@@ -18,13 +18,13 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 
     return {
-        title: `Was bedeutet '${params.word}' auf Deutsch? | German translation/meaning of '${params.word}'`,
+        title: `Übersetzung für '${params.word}' von Englisch nach Deutsch | German translation/meaning of '${params.word}'`,
         description: `Here you will get the translation of the word '${params.word}' as well as an explanation of its meaning. Hopefully, you will find what you are looking for.`,
         alternates: {
             canonical: `https://wordmeaningonline.com/german-meaning/${params.word}`
         },
         openGraph: {
-            title: `Was bedeutet '${params.word}' auf Deutsch? | German translation/meaning of '${params.word}'`,
+            title: `Übersetzung für '${params.word}' von Englisch nach Deutsch | German translation/meaning of '${params.word}'`,
             description: `Here you will get the translation of the word '${params.word}' as well as an explanation of its meaning. Hopefully, you will find what you are looking for.`,
             images: 'https://wordmeaningonline.com/opengraph-image.png'
           },
@@ -81,35 +81,15 @@ export default async function word({ params }: any) {
 
             <Breadcrumbs place="/german-meaning" name="German Meaning" title={`German translation of ${word1.word}`} />
 
-            <h1 className='text-2xl mb-0 lg:text-3xl text-slate-800 text-center'>Was bedeutet &apos;{word1.word}&apos; auf Deutsch? (German translation of &apos;{word1.word}&apos;)</h1>
+            <h1 className='text-2xl mb-0 lg:text-3xl text-slate-800 text-center'>Übersetzung für &apos;{word1.word}&apos; von Englisch nach Deutsch. (German translation of &apos;{word1.word}&apos;)</h1>
 
-            <p className='flex items-center justify-center'>
+            <p className='flex items-center justify-center flex-wrap'>
                 <span title='English Word'><b>{word1.word}</b>&nbsp;</span>
                 <Play_It theWord={`${word1.word}`} langCode="en-US" lang="English" />
                 <span title='Parts of Speech'>({word1.partsOfSpeech}):&nbsp;</span>
                 <span title='German Meaning'><b>{word1.germanTranslation}</b>&nbsp;</span>
                 <Play_It theWord={`${word1.germanTranslation}`} langCode="de-DE" lang="German" />
             </p>
-
-            {/* <table className='ring-2 rounded-sm text-center table-auto ring-slate-400 border-collapse font-bold bg-slate-100'>
-                <tbody>
-                <tr>
-                    <th colSpan={2} className='ring-1 text-center p-2 ring-slate-400'>{word1.word} meaning in German</th>
-                </tr>
-                <tr>
-                    <th className='ring-1 text-center p-2 ring-slate-400'>German Translation	&rArr;</th>
-                    <td className='ring-1 text-center p-2 ring-slate-400'>{word1.germanTranslation}</td>
-                </tr>
-                <tr>
-                    <th className='ring-1 text-center p-2 ring-slate-400'>Parts of Speech 	&rArr;</th>
-                    <td className='ring-1 text-center p-2 ring-slate-400'>{word1.partsOfSpeech}</td>
-                </tr>
-                <tr>
-                    <th className='ring-1 text-center p-2 ring-slate-400'>Views 	&rArr;</th>
-                    <td className='ring-1 text-center p-2 ring-slate-400'>{word1.view}</td>
-                </tr>
-                </tbody>
-            </table> */}
 
             <h2 className='mt-0 text-lg'>&apos;{word1.word}&apos; Bedeutung im Detail:</h2>
             <ReactMarkdown>{word1.meaning}</ReactMarkdown>
